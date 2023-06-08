@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./signup.css">
+</head>
+
+<body>
+    <div class="form-signup m-auto">
+        <form>
+            <!-- <img class="mb-4" src="../icons/user.png" alt="" width="72" height="57"> -->
+            <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <strong id="status"></strong>
+            <hr>
+            <strong for="name">Full Name</strong><br>
+            <input type="text" class="form-control" id="name" placeholder="Ravi Kumar Yadav" required>
+            <strong for="email">Email address</strong><br>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+            <strong for="password">Password</strong><br>
+            <input type="password" class="form-control" id="password" placeholder="Password" required>
+            <div class="d-grid gap-1 col-6 mx-auto">
+                <button class="btn btn-primary" id="signup" type="submit">Create
+                    <!-- <span class="spinner-border spinner-border-sm" role="status" aria-hidden="false"></span>
+                    <span class="visually-hidden">Loading...</span> -->
+                </button>
+                <button class="btn btn-primary" id="login" type="button">Log in</button>
+            </div>
+        </form>
+
+
+    </div>
+    <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./signup.js"></script>
+</body>
+
+</html>

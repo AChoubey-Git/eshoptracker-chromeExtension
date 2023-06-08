@@ -1,0 +1,39 @@
+{
+	"name": "Product Tracker",
+	"description": "This extension is created for changing the background color of the page orange.",
+	"version": "1.0",
+	"manifest_version": 3,
+	"action": {
+		"default_popup": "./login/index.html",
+		"default_title": "Product tracking..."
+	},
+	"icons": {
+		"16": "./icons/shop16.png",
+		"24": "./icons/shop24.png",
+		"32": "./icons/shop32.png",
+		"48": "./icons/shop48.png"
+	},
+	"host_permissions": [
+		"https://www.amazon.in/*",
+		"https://amitav.ngrok.io/"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"https://www.amazon.in/*"
+			],
+			"js": [
+				"contentScript.js"
+			]
+		}
+	],
+	"permissions": [
+		"activeTab",
+		"scripting",
+		"storage",
+		"tabs"
+	],
+	"background": {
+		"service_worker": "background.js"
+	}
+}

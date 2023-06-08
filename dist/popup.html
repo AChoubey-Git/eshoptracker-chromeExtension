@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><strong>ProTrack</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="user" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                UserName
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Setting</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#" role="button" id="signout" >Sign Out</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Wishlist</a>
+                        </li>
+                    </ul>
+                    <!-- <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form> -->
+                </div>
+            </div>
+        </nav>
+        <!-- <h2 style="text-align: center;">Product tracking...</h2> -->
+        <h3 style="text-align:center;" id="title"></h3>
+        <p style="text-align: center;">............................................</p>
+        <div class="container" id="view">
+            <strong>User:</strong>
+            <label id="userName"></label><br>
+            <strong>Activity:</strong>
+            <label id="activity"></label><br>
+            <strong for="id">Product ID:</strong>
+            <label id="id"></label><br>
+            <strong for="name">Product Name:</strong>
+            <label id="name"></label><br>
+            <strong for="url">Product URL:</strong>
+            <a href="#" id="url" target="_blank"></a><br>
+            <strong for="visitOn">visitedOn:</strong>
+            <label id="visitOn"></label>
+        </div>
+    </div>
+    <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>
