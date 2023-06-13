@@ -19,7 +19,7 @@
 // })
 
 async function signup(payload: any): Promise<any> {
-    return fetch(`https://amitav.ngrok.io/user/signup`,
+    return fetch(`http://eshop-activity-log.pearlthoughts.com/user/signup`,
         {
             method: "POST",
             headers: {
@@ -40,7 +40,7 @@ async function signup(payload: any): Promise<any> {
 }
 
 async function login(payload: any): Promise<any> {
-    return fetch('https://amitav.ngrok.io/user/login',
+    return fetch('http://eshop-activity-log.pearlthoughts.com/user/login',
         {
             method: "POST",
             headers: {

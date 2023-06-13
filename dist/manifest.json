@@ -15,7 +15,7 @@
 	},
 	"host_permissions": [
 		"https://www.amazon.in/*",
-		"https://amitav.ngrok.io/"
+		"http://eshop-activity-log.pearlthoughts.com/"
 	],
 	"content_scripts": [
 		{
