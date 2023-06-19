@@ -1,20 +1,20 @@
 {
-	"name": "Product Tracker",
-	"description": "This extension is created for changing the background color of the page orange.",
-	"version": "1.0",
+	"name": "E-Shop Activity Tracker",
+	"description": "This extension is created for tracking the eshop activity.",
+	"version": "1.0.0",
 	"manifest_version": 3,
 	"action": {
 		"default_popup": "./login/index.html",
-		"default_title": "Product tracking..."
+		"default_title": "E-Shop Activity tracking..."
 	},
 	"icons": {
-		"16": "./icons/shop16.png",
-		"24": "./icons/shop24.png",
-		"32": "./icons/shop32.png",
-		"48": "./icons/shop48.png"
+		"16": "./icons/Eshop-16.png",
+		"24": "./icons/Eshop-24.png",
+		"32": "./icons/Eshop-32.png",
+		"48": "./icons/Eshop-48.png",
+		"128": "./icons/Eshop-128.png"
 	},
 	"host_permissions": [
-		"https://www.amazon.in/*",
 		"http://eshop-activity-log.pearlthoughts.com/"
 	],
 	"content_scripts": [
@@ -28,8 +28,6 @@
 		}
 	],
 	"permissions": [
-		"activeTab",
-		"scripting",
 		"storage",
 		"tabs"
 	],
