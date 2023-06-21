@@ -15,7 +15,6 @@ function login() {
 
 document.addEventListener("DOMContentLoaded", async () => {
     await isSignIn();
-    console.log(islogin);
     if (!islogin) {
         const loginform = document.querySelector('form');
         const signup = document.getElementById('signup');
