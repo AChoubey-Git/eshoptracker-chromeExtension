@@ -1,7 +1,7 @@
 {
 	"name": "E-Shop Activity Tracker",
 	"description": "This extension is created for tracking the eshop activity.",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"manifest_version": 3,
 	"action": {
 		"default_popup": "./login/index.html",

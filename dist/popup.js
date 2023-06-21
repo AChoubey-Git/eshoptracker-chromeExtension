@@ -1,21 +1,38 @@
 
-console.log("working")
-let userName;
+let userName, userDetails;
 const signout = document.getElementById("signout")
 async function getCurrentTab() {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   return tab
 }
 
-async function setUser() {
+async function parseJwt(token) {
+  var base64Url = token.split('.')[1];
+  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
+    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+
+  return JSON.parse(jsonPayload);
+}
+
+async function getUserName() {
   const user = await chrome.storage.sync.get("name");
-  const token = await chrome.storage.sync.get("token");
-  userName = user.name;
+  return user.name;
+}
+async function getUser() {
+  const data = await chrome.storage.sync.get("token");
+  const { user } = await parseJwt(data.token);
+  return user;
+}
+async function setUser() {
+  userName = await getUserName()
+  userDetails = await getUser();
   document.getElementById("user").innerText = userName;
   document.getElementById('userName').innerText = userName;
 }
 
-async function removeSession(){
+async function removeSession() {
   chrome.storage.sync.remove("name");
   chrome.storage.sync.remove("token");
 }
@@ -30,7 +47,7 @@ function addProduct(data) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  setUser();
+  await setUser();
   const tab = await getCurrentTab();
   if (tab.url && tab.url.includes("amazon.in")) {
     const url = tab.url.split("/");
@@ -48,6 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         type: "NEW",
         productId,
         url: tab.url,
+        userId: userDetails.id,
       }, (response) => {
         if (response) {
           addProduct(response);
@@ -59,8 +77,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 })
 
-signout.addEventListener(("click"),() =>{
-  console.log('clicked');
+signout.addEventListener(("click"), () => {
   removeSession();
   location.replace('./login/index.html');
 })
